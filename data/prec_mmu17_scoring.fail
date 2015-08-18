@@ -1,0 +1,24 @@
+mmu-mir-1186	-8.36	0.990000	52	3	12	9	0	0
+GAGUGCUGGAAUUAAAGGCAUGCACCACCACUGCCCGGCAGGUUCUGUUAUU
+...((((((.......((......))........))))))............
+loop_left = 18	loop_right = 25
+mmu-mir-451	-24.00	0.005000	44	1	5	4	0	0
+AAACCGUUACCAUUACUGAGUUUAGUAAUGGUAACGGUUCUCUU
+.(((((((((((((((((....))))))))))))))))).....
+loop_left = 18	loop_right = 23
+mmu-mir-683-1	-27.90	0.120000	73	1	2	1	2	2,8
+GGCUGCAGUGGACCCAGGCUAAAAGCCAAGCUUUUCUGCACUGCAGUGGAUGCCUGCUGUAAGCUGUGUCCUC
+.((((((((.......(((.....)))..((......))))))))))((((((..((.....)).))))))..
+mmu-mir-683-2	-27.90	0.110000	73	1	2	1	2	2,8
+GGCUGCAGUGGACCCAGGCUAAAAGCCAAGCUUUUCUGCACUGCAGUGGAUGCCUGCUGUAAGCUGUGUCCUC
+.((((((((.......(((.....)))..((......))))))))))((((((..((.....)).))))))..
+mmu-mir-690	-27.00	0.375000	101	4	5	1	2	6,4
+GUUUUUGUGGAGCUAAUUGGCUGUAUUAAAGUGCUAGUAAGAAACAUUCUCCUCCAGCUGGAGAGAUGGCUCAGCUGUUAAAGGCUAGGCUCACAACCAAA
+....(((((((((((((((((...........))))))........((((((.......)))))).))))))((((......)))).....))))).....
+mmu-mir-697	-32.00	0.365000	95	5	3	-2	2	2,2
+GAGUGGGGAUGUGUCCUGGAUGUUGGUCUUGACAGGUCUCAGAGGUGACUACCACACAUUGAAGGGGUGGCGGUAACAUCCUGGUCCUGUGGAGA
+.....(((((.((((..((((....)))).)))).)))))..((....)).(((((....((.((((((.......))))))..)).)))))...
+mmu-mir-881	-12.80	0.095000	54	0	6	6	0	0
+CAGAGAGAUAACAGUCACAUCUUUUCUAAAGUAACUGUGUCUUUUCUGAAUAGA
+((((((((((.((((.((............)).)))))))).))))))......
+loop_left = 18	loop_right = 31

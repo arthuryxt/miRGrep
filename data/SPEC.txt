@@ -1,0 +1,10 @@
+miRGrep	../
+soap1	../soap.short
+BLAT	../blat
+RNAfold	../RNAfold
+randfold	../randfold
+short	./short.fq
+long	./long.fa
+knownMIRscore	./prec_mmu17_score
+miRBase	./prec_mmu17.fa
+mainRefSpecies	mmu
