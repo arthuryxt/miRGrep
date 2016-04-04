@@ -55,11 +55,11 @@ perl -e 'print join("\t","soap1","/folder-to-miRGrep/soap.short"),"\n";'        
 perl -e 'print join("\t","BLAT","/folder-to-miRGrep/blat"),"\n";'                            >> SPEC.txt
 perl -e 'print join("\t","RNAfold","/folder-to-miRGrep/RNAfold"),"\n";'                      >> SPEC.txt
 perl -e 'print join("\t","randfold","/folder-to-miRGrep/randfold"),"\n";'                    >> SPEC.txt
-perl -e 'print join("\t","short","/folder-to-miRGrep/data/short.fq"),"\n";'                   >> SPEC.txt
-perl -e 'print join("\t","long","/folder-to-miRGrep/data/long.fa"),"\n";'                     >> SPEC.txt
-perl -e 'print join("\t","knownMIRscore","/folder-to-miRGrep/data/prec_mmu17_score"),"\n";'   >> SPEC.txt
-perl -e 'print join("\t","miRBase","/folder-to-miRGrep/data/prec_mmu17.fa"),"\n";'            >> SPEC.txt
-perl -e 'print join("\t","mainRefSpecies","mmu"),"\n";'                                       >> SPEC.txt
+perl -e 'print join("\t","short","/folder-to-miRGrep/data/short.fq"),"\n";'                  >> SPEC.txt
+perl -e 'print join("\t","long","/folder-to-miRGrep/data/long.fa"),"\n";'                    >> SPEC.txt
+perl -e 'print join("\t","knownMIRscore","/folder-to-miRGrep/data/prec_mmu17_score"),"\n";'  >> SPEC.txt
+perl -e 'print join("\t","miRBase","/folder-to-miRGrep/data/prec_mmu17.fa"),"\n";'           >> SPEC.txt
+perl -e 'print join("\t","mainRefSpecies","mmu"),"\n";'                                      >> SPEC.txt
 
 Below are optional and default parameters, tweak them if needed.
 perl -e 'print join("\t","Threads","8"),"\n";'                    >> SPEC.txt
@@ -78,14 +78,14 @@ perl -e 'print join("\t","randfoldtrails","199"),"\n";'           >> SPEC.txt
 
 === 3. prepare the annotations for miRGrep ===
 # in ./data/ folder
-# prepare sample long_reads
-cut -f1 ../S5_score > S5_score.id
-perl ~/commoncode/get_selected_from_pool_fa.pl long.id ../long.fa long.fa
+# collapse long_reads into nun-redundant sequences, with the occurrance appended at the end of the header separated by "__", make sure output to fasta format
+# min output sequence length = 20
+# max output sequence length = 1000
+# output format = fa
+perl ../unique_reads_for_mapping.pl long.fa 20 1000 1
 
-# prepare sample short_reads
-perl ~/commoncode/get_selected_from_pool_singleline.pl long.id ../S1_reversed long_short
-cut -f5 long_short | sed -e 's/\#/\n/g' | cut -d\| -f1 | sort -u > short.id
-perl ~/commoncode/get_selected_from_pool_fq.pl short.id ../short.fq short.fq
+# collapse short_reads into nun-redundant sequences, with the occurrance appended at the end of the header separated by "__", output format can be both fasta or fastq
+perl ../unique_reads_for_mapping.pl short.fq 20 1000
 
 # prepare miRBase score
 # take mouse miRNA as example: download <hairpin.fa> and <mature.fa> from miRBase and change the "U" to "T".

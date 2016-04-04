@@ -47,6 +47,15 @@ print OUT "#!/bin/bash\n\n";
 
 print OUT "#Step1\n";
 print OUT "echo \"Step1 mapping short reads \(mature miRNAs\) against long reads \(pre-miRNAs\) \" \n";
+$command="perl ".$SPEC{"miRGrep"}."/unique_reads_for_mapping.pl ".$SPEC{"long"}." 20 1000 1";
+print OUT $command,"\n";
+my $tmp_name=$SPEC{"long"}.".uniq";
+$SPEC{"long"}=$tmp_name;
+$command="perl ".$SPEC{"miRGrep"}."/unique_reads_for_mapping.pl ".$SPEC{"short"}." 20 1000";
+print OUT $command,"\n";
+$tmp_name=$SPEC{"short"}.".uniq";
+$SPEC{"short"}=$tmp_name;
+
 $command=$SPEC{"soap1"}." -a ".$SPEC{"short"}." -d ".$SPEC{"miRBase"}." -o short_map2_miRBase -s 6 -v 2 -n 1 -r 1 -p ".$thread;
 print OUT $command,"\n";
 if ($maplong ne "no") {
